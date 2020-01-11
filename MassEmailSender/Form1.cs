@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
 
 namespace MassEmailSender
 {
@@ -15,6 +17,17 @@ namespace MassEmailSender
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btn_send_Click(object sender, EventArgs e)
+        {
+            EmailHandler emailhanlder = new EmailHandler();
+            emailhanlder.email_send(txt_fromEmail.Text, txtb_reciever.Text, txt_subject.Text, rtxt_Message.Text, txtb_gmailpassword.Text);
+        }
+
+        public void send()
+        {
+
         }
     }
 }
