@@ -21,8 +21,8 @@ namespace MassEmailSender
 
         private void btn_send_Click(object sender, EventArgs e)
         {
-            EmailHandler emailhanlder = new EmailHandler();
-            emailhanlder.email_send(txt_fromEmail.Text, txtb_reciever.Text, txt_subject.Text, rtxt_Message.Text, txtb_gmailpassword.Text);
+            
+            sendClass.sender(txtb_reciever.Text, txt_subject.Text, rtxt_Message.Text);
         }
 
         public void send()
