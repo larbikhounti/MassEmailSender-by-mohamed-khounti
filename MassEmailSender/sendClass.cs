@@ -21,13 +21,14 @@ namespace MassEmailSender
     class sendClass
     {
         static public List<string> emails = new List<string>();
+        static public int timeconverted;
         
         // If modifying these scopes, delete your previously saved credentials
         // at ~/.credentials/gmail-dotnet-quickstart.json
         static string[] Scopes = { GmailService.Scope.GmailReadonly, GmailService.Scope.GmailInsert, GmailService.Scope.GmailSend };
         String  ApplicationName = "ok";
 
-        //add emails to array
+        //add emails to the list
         public static void AddEmails()
         {
             //path of the file 
@@ -41,6 +42,12 @@ namespace MassEmailSender
                 Console.WriteLine(emails);
             }
         
+        }
+        //clear List of emails 
+        public static void ClearEmails()
+        {
+            emails.Clear();
+
         }
         //send emails 
         static  public  void sender(String to,String  subject,String body)
@@ -157,9 +164,16 @@ namespace MassEmailSender
         }
         //show list view
         public static  void ListViewShower()
+          
         {
       
 
+        }
+        // return time devided by 1000(millisecond)
+        public static int timedevided()
+        {
+           int nexttime  =  timeconverted * 1000;
+            return nexttime;
         }
 
     }

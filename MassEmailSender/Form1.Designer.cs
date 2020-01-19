@@ -33,19 +33,23 @@
             this.txt_subject = new System.Windows.Forms.TextBox();
             this.rtxt_Message = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txb_time = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txb_time = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_uploadfiles = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.btn_Cancel = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.emailscount = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.emails = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.emailscount = new System.Windows.Forms.Label();
+            this.btn_uploadfiles = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.statu = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_send
@@ -93,19 +97,10 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Message";
             // 
-            // txb_time
-            // 
-            this.txb_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txb_time.Location = new System.Drawing.Point(65, 22);
-            this.txb_time.Name = "txb_time";
-            this.txb_time.Size = new System.Drawing.Size(100, 21);
-            this.txb_time.TabIndex = 11;
-            this.txb_time.TextChanged += new System.EventHandler(this.txb_time_TextChanged);
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txb_time);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(563, 20);
             this.groupBox1.Name = "groupBox1";
@@ -113,6 +108,13 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "time to wait after next message";
+            // 
+            // txb_time
+            // 
+            this.txb_time.Location = new System.Drawing.Point(65, 24);
+            this.txb_time.Name = "txb_time";
+            this.txb_time.Size = new System.Drawing.Size(100, 20);
+            this.txb_time.TabIndex = 13;
             // 
             // label3
             // 
@@ -126,6 +128,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.groupBox4);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.btn_Cancel);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btn_send);
@@ -139,6 +143,27 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Message ";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 211);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Message :";
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Location = new System.Drawing.Point(348, 373);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(75, 32);
+            this.btn_Cancel.TabIndex = 7;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox3
             // 
@@ -153,34 +178,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Add Recipients (Emails)";
             // 
-            // btn_uploadfiles
+            // emailscount
             // 
-            this.btn_uploadfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_uploadfiles.Location = new System.Drawing.Point(78, 39);
-            this.btn_uploadfiles.Name = "btn_uploadfiles";
-            this.btn_uploadfiles.Size = new System.Drawing.Size(75, 23);
-            this.btn_uploadfiles.TabIndex = 0;
-            this.btn_uploadfiles.Text = "Browse";
-            this.btn_uploadfiles.UseVisualStyleBackColor = true;
-            this.btn_uploadfiles.Click += new System.EventHandler(this.btn_uploadfiles_Click);
-            // 
-            // btn_Cancel
-            // 
-            this.btn_Cancel.Location = new System.Drawing.Point(348, 373);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(75, 32);
-            this.btn_Cancel.TabIndex = 7;
-            this.btn_Cancel.Text = "Cancel";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
-            this.btn_Cancel.Click += new System.EventHandler(this.button1_Click);
+            this.emailscount.AutoSize = true;
+            this.emailscount.Location = new System.Drawing.Point(46, 290);
+            this.emailscount.Name = "emailscount";
+            this.emailscount.Size = new System.Drawing.Size(80, 13);
+            this.emailscount.TabIndex = 16;
+            this.emailscount.Text = "email count :";
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.emails});
-            this.listView1.Location = new System.Drawing.Point(26, 68);
+            this.listView1.Location = new System.Drawing.Point(8, 57);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(203, 213);
+            this.listView1.Size = new System.Drawing.Size(224, 213);
             this.listView1.TabIndex = 15;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -190,14 +203,40 @@
             this.emails.Text = "emails";
             this.emails.Width = 150;
             // 
-            // emailscount
+            // btn_uploadfiles
             // 
-            this.emailscount.AutoSize = true;
-            this.emailscount.Location = new System.Drawing.Point(46, 290);
-            this.emailscount.Name = "emailscount";
-            this.emailscount.Size = new System.Drawing.Size(80, 13);
-            this.emailscount.TabIndex = 16;
-            this.emailscount.Text = "email count :";
+            this.btn_uploadfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_uploadfiles.Location = new System.Drawing.Point(76, 28);
+            this.btn_uploadfiles.Name = "btn_uploadfiles";
+            this.btn_uploadfiles.Size = new System.Drawing.Size(75, 23);
+            this.btn_uploadfiles.TabIndex = 0;
+            this.btn_uploadfiles.Text = "Browse";
+            this.btn_uploadfiles.UseVisualStyleBackColor = true;
+            this.btn_uploadfiles.Click += new System.EventHandler(this.btn_uploadfiles_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox4.Controls.Add(this.statu);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox4.Location = new System.Drawing.Point(81, 366);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(200, 46);
+            this.groupBox4.TabIndex = 10;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "State";
+            // 
+            // statu
+            // 
+            this.statu.AutoSize = true;
+            this.statu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statu.ForeColor = System.Drawing.Color.Red;
+            this.statu.Location = new System.Drawing.Point(70, 17);
+            this.statu.Name = "statu";
+            this.statu.Size = new System.Drawing.Size(54, 16);
+            this.statu.TabIndex = 0;
+            this.statu.Text = "Ready";
             // 
             // Form1
             // 
@@ -209,12 +248,15 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "New Message";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -226,7 +268,6 @@
         private System.Windows.Forms.TextBox txt_subject;
         private System.Windows.Forms.RichTextBox rtxt_Message;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txb_time;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -236,6 +277,10 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader emails;
         private System.Windows.Forms.Label emailscount;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txb_time;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label statu;
     }
 }
 
