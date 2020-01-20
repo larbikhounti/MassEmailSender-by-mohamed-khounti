@@ -22,5 +22,10 @@ namespace MassEmailSender
             Form1 f = new Form1();
             f.Show();
         }
+
+        private void btn_exite_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

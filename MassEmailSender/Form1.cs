@@ -48,7 +48,7 @@ namespace MassEmailSender
 
                 sendthread.Start(); // start thread
               
-                sendthread.IsBackground = true; 
+                
                 btn_send.Text = "Sending...";
                 btn_send.Enabled = false;
                 btn_Cancel.Enabled = true;
@@ -107,7 +107,7 @@ namespace MassEmailSender
                 listView1.Items.Add(item);
                 
             }
-            emailscount.Text = "emails count : " + sendClass.emails.Count.ToString();
+      
 
         }
 
@@ -154,7 +154,15 @@ namespace MassEmailSender
         {
 
         }
-  
 
+        private void txt_subject_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_exite_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
